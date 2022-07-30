@@ -1,31 +1,30 @@
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
+import funnyClasses.ArListCountRemovedElements;
 
 public class Main {
+
+    public int a = 10;
+
     public static void main(String[] args) {
 
-        ArrayList<String> arList1 = new ArrayList();
-        for (int i = 0; i < 20; i++) {
-            arList1.add(String.valueOf(i));
-        }
+        List<Integer> ar1 = new ArrayList<>();
 
-        ArrayList<String> arList2 = new ArrayList();
-        for (int i = 0; i < 10; i++) {
-            arList2.add(String.valueOf(i));
+        for(int i = 0; i < 5000; i++){
+            ar1.add(Integer.valueOf((int) (15 + Math.random() * (36 - 15))));
         }
 
 
-        System.out.println("\n\n removing everything");
-        System.out.println("arList 1 before removing-> " + arList1);
-        System.out.println("arList 2 before removing-> " + arList2);
-        boolean removed = arList1.removeAll(arList2);
-        System.out.println("arList 1 after removing(" + removed + ')' + arList1);
-        System.out.println("arList 2 after removing" + arList2);
 
-        System.out.println(arList1.indexOf("10") + " " + arList1.indexOf("16"));
-        System.out.println(arList1.indexOf("10") + ' ' + arList1.indexOf("16"));
-        System.out.println(arList1.indexOf("10") + "" + arList1.indexOf("16"));
-
+        ArListCountRemovedElements arListCountRemovedElements = new ArListCountRemovedElements();
+        System.out.println("\nar1");
+        System.out.println(ar1);
+        System.out.println("Check if element exists");
+        System.out.println("Element 15 - " + ar1.indexOf(15) + " with overall quantity " + arListCountRemovedElements.amount(ar1, 15));
+        System.out.println("Element 20 - " + ar1.indexOf(20) + " with overall quantity " + arListCountRemovedElements.amount(ar1, 20));
+        System.out.println("Element 25 - " + ar1.indexOf(25) + " with overall quantity " + arListCountRemovedElements.amount(ar1, 25));
+        System.out.println("Element 30 - " + ar1.indexOf(30) + " with overall quantity " + arListCountRemovedElements.amount(ar1, 30));
+        System.out.println("Element 35 - " + ar1.indexOf(35) + " with overall quantity " + arListCountRemovedElements.amount(ar1, 35));
     }
+
+
 }
