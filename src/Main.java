@@ -1,5 +1,6 @@
 import java.util.*;
 
+import funnyClasses.tasksFromYT.first.FirstTaskCache;
 import funnyClasses.tasksFromYT.first.FirstTaskDoubleLoop;
 
 public class Main {
@@ -14,6 +15,10 @@ public class Main {
         System.out.println(firstTaskDoubleLoop1.doubleLoopWithBool());
         System.out.println(firstTaskDoubleLoop1.doubleLoopWithGoTo());
         System.out.println(firstTaskDoubleLoop1.doubleLoop());
+
+        FirstTaskCache firstTaskCache = new FirstTaskCache(lookingFrom, 8);
+
+        System.out.println(firstTaskCache.cachResult());
 
     }
 }
